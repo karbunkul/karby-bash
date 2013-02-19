@@ -8,3 +8,19 @@ alias web-root='cd /var/www'
 github_clone(){
   git clone https://github.com/karbunkul/$1.git
 }
+
+drupal_install(){
+  PROJECTNAME="drupal"
+  
+  if [ "$1" != '' ]; then
+    PROJECTNAME=$1
+  fi
+
+  #dowload core version
+  CORE=7
+  if [ "$2" != '' ]; then
+    CORE=$2
+  fi
+
+  drush dl drupal-$CORE --drupal-project-rename="$PROJECTNAME" -y
+}
