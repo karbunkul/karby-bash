@@ -4,6 +4,7 @@ alias web-chown='sudo chown www-data:karbunkul ./ -R'
 alias web-chmod='sudo chmod 777 ./ -R'
 alias web-chboth='web-chown &&  web-chmod'
 alias web-root='cd /var/www'
+alias svn-clean-file='find ./ -name ".svn" | xargs rm -Rf'
 
 github_clone(){
   git clone https://github.com/karbunkul/$1.git
